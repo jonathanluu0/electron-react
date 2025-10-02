@@ -9,7 +9,7 @@ interface ThreeSceneProps {
     cube: ShapeProps;
     sphere: ShapeProps;
 }
-
+//Scene to hold multiple 
 export default function ThreeScene({ cube, sphere }: { cube: ShapeProps; sphere: ShapeProps }) {
     return (
         <Canvas>
