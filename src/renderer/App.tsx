@@ -9,12 +9,14 @@ export default function App() {
     posX: -2,
     scaleX: 1,
     color: "#00ff00",
+    rotY: 0,
   });
 
   const [sphere, setSphere] = useState<ShapeProps>({
     posX: 2,
     scaleX: 1,
     color: "#ff0000",
+    rotY: 0,
   });
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
@@ -41,6 +43,21 @@ export default function App() {
           step={0.1}
           onChange={(e) =>
             setCube({ ...cube, scaleX: parseFloat(e.target.value) })
+          }
+        />
+        <input
+          id="cube"
+          name="rotate"
+          type="range"
+          min={0}
+          max={360}
+          step={1}
+          value={cube.rotY} 
+          onChange={(e) =>
+            setCube({
+              ...cube,
+              rotY: parseFloat(e.target.value),
+            })
           }
         />
         <input
@@ -74,12 +91,22 @@ export default function App() {
           }
         />
         <input
+          id="sphere"
+          name="rotate"
+          type="range"
+          min={0}
+          max={360}
+          step={1}
+          value={sphere.rotY}
+          onChange={(e) =>
+            setSphere({ ...sphere, rotY: parseFloat(e.target.value) })
+          }
+        />
+        <input
           type="color"
           value={sphere.color}
           onChange={(e) => setSphere({ ...sphere, color: e.target.value })}
         />
-
-        
       </div>
       <ThreeScene cube={cube} sphere={sphere} />
     </div>
