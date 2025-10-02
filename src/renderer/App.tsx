@@ -1,5 +1,10 @@
 import React from "react";
+import ThreeScene from "./ThreeScene";
 
 export default function App() {
-  return <h1>Hello Electron + React + TS! IT FINALLY WORKS</h1>;
+  return (
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <ThreeScene />
+    </div>
+  );
 }
